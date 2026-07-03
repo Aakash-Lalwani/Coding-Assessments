@@ -1,21 +1,20 @@
 public class FinanceForecaster {
 
-    // Standard recursive way to calculate future value
+  
     public static double calcFutureValue(double balance, double rate, int years) {
-        // Base case: no years left
+        
         if (years == 0) {
             return balance;
         }
-        // Add a year's worth of interest and call again
+       
         return calcFutureValue(balance * (1 + rate), rate, years - 1);
     }
 
-    // Optimized way using fast exponentiation so we don't blow up the call stack
+   
     public static double optimizedFutureValue(double balance, double rate, int years) {
         return balance * power(1 + rate, years);
     }
 
-    // Helper for the optimized version
     private static double power(double base, int exp) {
         if (exp == 0) return 1.0;
         
