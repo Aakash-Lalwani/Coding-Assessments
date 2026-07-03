@@ -20,7 +20,7 @@ class Product implements Comparable<Product> {
         return "ID: " + productId + " | " + productName + " (" + category + ")";
     }
 
-    // We need this so Arrays.sort() knows how to order the products
+ 
     @Override
     public int compareTo(Product other) {
         return Integer.compare(this.productId, other.productId);
@@ -29,7 +29,7 @@ class Product implements Comparable<Product> {
 
 public class StoreSearch {
 
-    // Basic linear search - checks one by one
+   
     public static Product linearSearch(Product[] arr, int targetId) {
         for (Product p : arr) {
             if (p.getProductId() == targetId) {
@@ -39,7 +39,7 @@ public class StoreSearch {
         return null; 
     }
 
-    // Binary search - much faster but needs sorted array
+  
     public static Product binarySearch(Product[] arr, int targetId) {
         int left = 0;
         int right = arr.length - 1;
