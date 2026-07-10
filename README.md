@@ -1,6 +1,6 @@
 # Coding Assessments
 
-This repository is my working folder for coding assignments and hand-ins. I kept the original folder names and file names so it is easy to match each submission with the coursework brief.
+This repository is my working folder for coding assignments and hand-ons. I kept the original folder names and file names so it is easy to match each submission with the coursework brief.
 
 ## What is inside
 
@@ -32,12 +32,6 @@ This repository is my working folder for coding assignments and hand-ins. I kept
 - `Spring Core_Maven/` - Spring Core and Maven exercises.
 - `Spring-data-jpa-handson/` - JPA and Spring Data practice.
 - `Lab1_JSX_officespacerentalapp.docx` and `Lab2_ES6_cricketapp.docx` - React Hands-on.
-
-## Notes
-
-- Source code is usually inside the `src/` folders.
-- Documents such as `.docx`, `.pdf`, `.png`, and `.xlsx` are kept alongside the assignment folders.
-- Some folder names contain spaces because they mirror the original class material.
 
 ## Quick way to browse
 
