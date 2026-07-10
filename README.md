@@ -1,172 +1,44 @@
-## 📚 Repository Overview
+# Coding Assessments
 
-This repo contains all my hands-on assignments from my coursework. Each folder represents a different week or module, with complete source code, documentation, and assignment files.
+This repository is my working folder for coding assignments and hand-ins. I kept the original folder names and file names so it is easy to match each submission with the coursework brief.
 
-| Module | Week | Topics | Language |
-| --- | --- | --- | --- |
-| **DSA** | Week 2 | Search Algorithms, Recursion, Financial Forecasting | Java |
-| **Design Patterns** | Week 1 | Factory Method, Singleton Pattern | Java |
-| **PL/SQL** | Week 1 | Database Queries, Stored Procedures | SQL |
-| **React** | Week 1-2 | Components, Props, State Management | JavaScript/React |
+## What is inside
 
----
+- Week 1: Java design patterns, DSA, PL/SQL, and React assignments.
+- Week 2: JUnit, Mockito, and Spring REST exercises.
+- Week 3: Logging, Spring Core, JWT auth service, microservices, and Spring Data JPA practice.
 
-## 📁 Project Structure
+## Folder guide
 
-```
-Coding-Assessments/
-│
-├── DSA_WEEK_2/
-│   ├── StoreSearch.java          # Linear & Binary Search Implementation
-│   ├── FinanceForecaster.java    # Recursive & Optimized Algorithms
-│   └── DSA_Assignment.pdf        # Assignment Details & Analysis
-│
-├── Design_Patterns_Principles_WEEK_1/
-│   ├── FactoryMethodPatternExample/
-│   │   └── src/
-│   │       ├── Document.java
-│   │       ├── DocumentFactory.java
-│   │       ├── WordDocument.java, PdfDocument.java, ExcelDocument.java
-│   │       └── FactoryMethodTest.java
-│   │
-│   ├── SingletonPatternExample/
-│   │   └── src/
-│   │       ├── Logger.java
-│   │       └── SingletonTest.java
-│   │
-│   └── JavaDesignPatterns_HOL_Asgn.docx
-│
-├── PL_SQL_WEEK_1/
-│   └── PLSQL_Assignment.docx
-│
-├── React_WEEK_1&2/
-│   ├── myfirstreact_source_A1/           # First React App
-│   ├── StudentApp_SourceCode_A2/         # Student Management Portal
-│   ├── scorecalculatorapp_source_A3/     # Score Calculator App
-│   └── Assignment Documentation (*.docx)
-│
-└── DN - Java FSE Mandatory hands-on detail.xlsx
-```
+### Week 1
 
----
+- `Design_Patterns_Principles/` - Factory Method and Singleton examples.
+- `DSA/` - search and recursion practice, plus the finance forecaster task.
+- `PL_SQL/` - SQL assignment files.
+- `React_WEEK/` - the React app assignments and their source code.
 
-## 🎯 Key Assignments
+### Week 2
 
-### **DSA Week 2: Search & Recursion**
+- `JUnit_Basic Testing Exercises/` - JUnit exercises and supporting files.
+- `Mockito exercises/` - mocking and verification practice.
+- `Spring_REST_/` - Spring REST assignment files.
+- `Lab3_CSSModules_cohortapp.docx` and `Lab4_Lifecycle_blogapp.docx` - lab submissions.
 
-**StoreSearch.java** - E-commerce Product Search
+### Week 3
 
-- Implements **Linear Search** (O(n)) and **Binary Search** (O(log n))
+- `jwt-auth-service/` - JWT-based Spring Boot service.
+- `Microservices/` - microservices assignment documents.
+- `SL4J Logging exercises/` - logging practice.
+- `Spring Core_Maven/` - Spring Core and Maven exercises.
+- `Spring-data-jpa-handson/` - JPA and Spring Data practice.
+- `Lab1_JSX_officespacerentalapp.docx` and `Lab2_ES6_cricketapp.docx` - lab submissions.
 
-- Compares performance across different dataset sizes
+## Notes
 
-- Demonstrates the importance of algorithm selection for scalability
+- Source code is usually inside the `src/` folders.
+- Documents such as `.docx`, `.pdf`, `.png`, and `.xlsx` are kept alongside the assignment folders.
+- Some folder names contain spaces because they mirror the original class material.
 
-**FinanceForecaster.java** - Financial Forecasting
+## Quick way to browse
 
-- **Naive Recursive** approach: O(2^n) - Inefficient for large inputs
-
-- **Optimized Recursive** approach: O(log n) - Using fast exponentiation
-
-- Shows how optimization techniques dramatically improve performance
-
----
-
-### **Design Patterns Week 1**
-
-**Factory Method Pattern**
-
-- Creates different document types (Word, PDF, Excel) without exposing creation logic
-
-- Demonstrates loose coupling and the Open/Closed Principle
-
-- Files: `DocumentFactory`, `WordDocumentFactory`, `PdfDocumentFactory`, `ExcelDocumentFactory`
-
-**Singleton Pattern**
-
-- Implements a thread-safe Logger class with single instance
-
-- Ensures controlled access to shared resources
-
-- Files: `Logger.java`, `SingletonTest.java`
-
----
-
-### **React Week 1-2: Web Applications**
-
-**Assignment 1: My First React App** (`myfirstreact_source_A1/`)
-
-- Basic React setup and component structure
-
-- Introduction to JSX and component rendering
-
-**Assignment 2: Student Management Portal** (`StudentApp_SourceCode_A2/`)
-
-- Multi-component React application
-
-- Separate sections: Home, About, Contact
-
-- Component composition and styling
-
-**Assignment 3: Score Calculator** (`scorecalculatorapp_source_A3/`)
-
-- Functional components with props
-
-- Score calculation logic
-
-- Custom styling with CSS modules
-
----
-
-
-## 💡 Key Learnings
-
-### Data Structures & Algorithms
-
-- **Time Complexity Analysis**: Understanding Big O notation and its practical implications
-
-- **Search Algorithms**: Linear vs Binary search trade-offs
-
-- **Recursion**: Base cases, recursive cases, and optimization techniques
-
-- **Performance Optimization**: Reducing exponential complexity to linear/logarithmic
-
-### Design Patterns
-
-- **Factory Method**: Creating objects without specifying exact classes
-
-- **Singleton**: Ensuring single instance and thread safety
-
-- **SOLID Principles**: Writing maintainable and scalable code
-
-### React.js
-
-- **Component Architecture**: Breaking UI into reusable components
-
-- **Props & State**: Managing data flow in React applications
-
-- **Functional Components**: Modern React development practices
-
-- **Styling**: CSS modules and inline styling approaches
-
-### PL/SQL
-
-- Database query optimization
-
-- Stored procedures and functions
-
-- Transaction management
-
----
-
-## 📊 Technology Stack
-
-| Technology | Usage |
-| --- | --- |
-| **Java** | DSA, Design Patterns |
-| **React.js** | Frontend Web Applications |
-| **JavaScript** | React Components & Logic |
-| **CSS** | Styling & Layout |
-| **PL/SQL** | Database Programming |
-
----
+Open the week you want, then open the assignment folder inside it. If you are looking for code, start with `src/`. If you are looking for submission notes or screenshots, check the files next to the project folder.
