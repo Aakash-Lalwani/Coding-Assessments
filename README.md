@@ -22,7 +22,7 @@ This repository is my working folder for coding assignments and hand-ins. I kept
 - `JUnit_Basic Testing Exercises/` - JUnit exercises and supporting files.
 - `Mockito exercises/` - mocking and verification practice.
 - `Spring_REST_/` - Spring REST assignment files.
-- `Lab3_CSSModules_cohortapp.docx` and `Lab4_Lifecycle_blogapp.docx` - lab submissions.
+- `Lab3_CSSModules_cohortapp.docx` and `Lab4_Lifecycle_blogapp.docx` - React Hands-on.
 
 ### Week 3
 
@@ -31,7 +31,7 @@ This repository is my working folder for coding assignments and hand-ins. I kept
 - `SL4J Logging exercises/` - logging practice.
 - `Spring Core_Maven/` - Spring Core and Maven exercises.
 - `Spring-data-jpa-handson/` - JPA and Spring Data practice.
-- `Lab1_JSX_officespacerentalapp.docx` and `Lab2_ES6_cricketapp.docx` - lab submissions.
+- `Lab1_JSX_officespacerentalapp.docx` and `Lab2_ES6_cricketapp.docx` - React Hands-on.
 
 ## Notes
 
