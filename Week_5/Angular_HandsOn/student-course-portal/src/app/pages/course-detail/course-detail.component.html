@@ -1,0 +1,25 @@
+<div *ngIf="course; else notFound">
+  <h1>{{ course.name }}</h1>
+  <div class="course-card">
+    <p><strong>Code:</strong> {{ course.code }}</p>
+    <p><strong>Credits:</strong> {{ course.credits }}</p>
+    <p><strong>Status:</strong>
+      <span [ngSwitch]="course.gradeStatus">
+        <span *ngSwitchCase="'passed'" class="badge-passed">Passed</span>
+        <span *ngSwitchCase="'failed'" class="badge-failed">Failed</span>
+        <span *ngSwitchCase="'pending'" class="badge-pending">Pending</span>
+      </span>
+    </p>
+  </div>
+  <button class="btn btn-primary" (click)="goBack()">Back to Courses</button>
+</div>
+
+<ng-template #notFound>
+  <div *ngIf="errorMessage" style="color: red;">
+    {{ errorMessage }}
+  </div>
+  <div *ngIf="!errorMessage">
+    <p>Course not found.</p>
+    <button class="btn btn-primary" (click)="goBack()">Back to Courses</button>
+  </div>
+</ng-template>

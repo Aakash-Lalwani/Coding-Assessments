@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-On 7: Angular Routing</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1976d2, #1565c0);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.2em; opacity: 0.9; }
+        .content { padding: 40px; }
+        .section { margin-bottom: 32px; }
+        .section h2 {
+            color: #1976d2;
+            border-bottom: 3px solid #1976d2;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            font-size: 1.5em;
+        }
+        .section h3 {
+            color: #333;
+            margin: 16px 0 8px;
+            font-size: 1.2em;
+        }
+        .topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0;
+        }
+        .topic-tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        .screenshot {
+            margin: 20px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .screenshot img { width: 100%; display: block; }
+        .screenshot-caption {
+            background: #f5f5f5;
+            padding: 10px 16px;
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+        .code-block {
+            background: #263238;
+            color: #aed581;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin: 12px 0;
+        }
+        .file-list {
+            background: #f8f9fa;
+            border-left: 4px solid #1976d2;
+            padding: 16px 20px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .file-list li { margin: 6px 0; color: #444; }
+        .file-list code {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #1976d2;
+            font-family: 'Courier New', monospace;
+        }
+        .expected {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+        }
+        .expected h4 { color: #2e7d32; margin-bottom: 8px; }
+        .level-badge {
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-left: 12px;
+        }
+        .beginner { background: #c8e6c9; color: #2e7d32; }
+        .intermediate { background: #fff9c4; color: #f57f17; }
+        .advanced { background: #ffccbc; color: #bf360c; }
+        .footer {
+            background: #f5f5f5;
+            padding: 20px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 12px;
+            text-align: left;
+        }
+        th { background: #f5f5f5; font-weight: 600; }
+        tr:nth-child(even) { background: #fafafa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hands-On 7: Angular Routing</h1>
+            <div class="subtitle">Student Course Portal | Angular v20.0</div>
+        </div>
+        <div class="content">
+            
+<div class="section">
+    <h2>Hands-On 7: Angular Routing <span class="level-badge intermediate">Intermediate</span></h2>
+    <div class="topics">
+        <span class="topic-tag">Route Configuration</span>
+        <span class="topic-tag">Route Parameters</span>
+        <span class="topic-tag">Nested Routes</span>
+        <span class="topic-tag">CanActivate Guard</span>
+        <span class="topic-tag">CanDeactivate Guard</span>
+        <span class="topic-tag">Lazy Loading</span>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Task 1: Routes, Parameters & Nested Routes</h2>
+    <div class="screenshot">
+        <img src="screenshots/ho7_routes.png" alt="Route configuration code">
+        <div class="screenshot-caption">Complete route configuration with nested routes and lazy loading</div>
+    </div>
+    <h3>Route Configuration</h3>
+    <table>
+        <tr><th>Path</th><th>Component/Action</th><th>Type</th></tr>
+        <tr><td>/</td><td>HomeComponent</td><td>Static</td></tr>
+        <tr><td>/courses</td><td>CoursesLayoutComponent with children</td><td>Nested</td></tr>
+        <tr><td>/courses/:id</td><td>CourseDetailComponent (reads param)</td><td>Dynamic</td></tr>
+        <tr><td>/profile</td><td>StudentProfileComponent (guarded)</td><td>Protected</td></tr>
+        <tr><td>/enroll</td><td>EnrollmentModule (lazy loaded)</td><td>Lazy</td></tr>
+        <tr><td>**</td><td>NotFoundComponent</td><td>Wildcard</td></tr>
+    </table>
+    <p><strong>Query Parameters</strong>: Search input updates URL to /courses?search=angular using Router.navigate with queryParams.</p>
+    <p><strong>Nested Routes</strong>: /courses shows CourseList, /courses/2 shows CourseDetail within the same CoursesLayout.</p>
+</div>
+
+<div class="section">
+    <h2>Task 2: Lazy Loading & Route Guards</h2>
+    <div class="screenshot">
+        <img src="screenshots/ho7_guards.png" alt="Route guards code">
+        <div class="screenshot-caption">AuthGuard (CanActivate) and UnsavedChangesGuard (CanDeactivate)</div>
+    </div>
+    <h3>Guards Implemented</h3>
+    <ul>
+        <li><strong>AuthGuard (CanActivate)</strong>: Checks isLoggedIn, redirects to home if not authenticated</li>
+        <li><strong>UnsavedChangesGuard (CanDeactivate)</strong>: Shows confirm dialog if reactive form has unsaved changes</li>
+    </ul>
+    <h3>Lazy Loading</h3>
+    <p>Enrollment feature module is only downloaded when user navigates to /enroll. Verified via Chrome DevTools Network tab - separate JS chunk loaded on first navigation.</p>
+    <div class="expected">
+        <h4>Expected Outcome</h4>
+        <p>Network tab shows separate chunk loaded on first /enroll navigation. Navigating to /profile without login redirects to home. Dirty form shows confirmation dialog on navigation away. /courses/2 displays correct course detail.</p>
+    </div>
+</div>
+
+        </div>
+        <div class="footer">
+            <p>Digital Nurture 5.0 | .NET Full Stack Engineer Track | Angular Hands-On Exercise</p>
+            <p>For Digital Nurture 5.0 Participants Only</p>
+        </div>
+    </div>
+</body>
+</html>

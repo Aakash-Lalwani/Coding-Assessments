@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-On 2: Data Binding & Component Communication</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1976d2, #1565c0);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.2em; opacity: 0.9; }
+        .content { padding: 40px; }
+        .section { margin-bottom: 32px; }
+        .section h2 {
+            color: #1976d2;
+            border-bottom: 3px solid #1976d2;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            font-size: 1.5em;
+        }
+        .section h3 {
+            color: #333;
+            margin: 16px 0 8px;
+            font-size: 1.2em;
+        }
+        .topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0;
+        }
+        .topic-tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        .screenshot {
+            margin: 20px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .screenshot img { width: 100%; display: block; }
+        .screenshot-caption {
+            background: #f5f5f5;
+            padding: 10px 16px;
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+        .code-block {
+            background: #263238;
+            color: #aed581;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin: 12px 0;
+        }
+        .file-list {
+            background: #f8f9fa;
+            border-left: 4px solid #1976d2;
+            padding: 16px 20px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .file-list li { margin: 6px 0; color: #444; }
+        .file-list code {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #1976d2;
+            font-family: 'Courier New', monospace;
+        }
+        .expected {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+        }
+        .expected h4 { color: #2e7d32; margin-bottom: 8px; }
+        .level-badge {
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-left: 12px;
+        }
+        .beginner { background: #c8e6c9; color: #2e7d32; }
+        .intermediate { background: #fff9c4; color: #f57f17; }
+        .advanced { background: #ffccbc; color: #bf360c; }
+        .footer {
+            background: #f5f5f5;
+            padding: 20px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 12px;
+            text-align: left;
+        }
+        th { background: #f5f5f5; font-weight: 600; }
+        tr:nth-child(even) { background: #fafafa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hands-On 2: Data Binding & Component Communication</h1>
+            <div class="subtitle">Student Course Portal | Angular v20.0</div>
+        </div>
+        <div class="content">
+            
+<div class="section">
+    <h2>Hands-On 2: Data Binding, Lifecycle Hooks & Component Communication <span class="level-badge beginner">Beginner</span></h2>
+    <div class="topics">
+        <span class="topic-tag">Property Binding</span>
+        <span class="topic-tag">Two-Way Binding</span>
+        <span class="topic-tag">Event Binding</span>
+        <span class="topic-tag">ngOnInit</span>
+        <span class="topic-tag">ngOnDestroy</span>
+        <span class="topic-tag">ngOnChanges</span>
+        <span class="topic-tag">@Input</span>
+        <span class="topic-tag">@Output</span>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Task 1: All Four Binding Types</h2>
+    <div class="screenshot">
+        <img src="screenshots/ho2_bindings.png" alt="Four binding types code">
+        <div class="screenshot-caption">Implementation of all 4 Angular binding types in HomeComponent</div>
+    </div>
+    <table>
+        <tr><th>Binding Type</th><th>Syntax</th><th>Direction</th><th>Example</th></tr>
+        <tr><td>Interpolation</td><td>{{ expression }}</td><td>Component &rarr; DOM</td><td>&lt;h1&gt;{{ portalName }}&lt;/h1&gt;</td></tr>
+        <tr><td>Property Binding</td><td>[property]="value"</td><td>Component &rarr; DOM</td><td>&lt;button [disabled]="!isActive"&gt;</td></tr>
+        <tr><td>Event Binding</td><td>(event)="handler()"</td><td>DOM &rarr; Component</td><td>&lt;button (click)="onClick()"&gt;</td></tr>
+        <tr><td>Two-Way Binding</td><td>[(ngModel)]="prop"</td><td>DOM &harr; Component</td><td>&lt;input [(ngModel)]="searchTerm"&gt;</td></tr>
+    </table>
+    <div class="expected">
+        <h4>Expected Outcome</h4>
+        <ul>
+            <li>Typing in search box updates "Searching for:" text in real time</li>
+            <li>Clicking "Enroll Now" shows the message</li>
+            <li>Button disabled state changes based on isPortalActive</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Task 2: Lifecycle Hooks</h2>
+    <div class="screenshot">
+        <img src="screenshots/ho2_lifecycle.png" alt="Lifecycle hooks code">
+        <div class="screenshot-caption">ngOnInit, ngOnDestroy in HomeComponent; ngOnChanges in CourseCardComponent</div>
+    </div>
+    <p><strong>ngOnInit</strong> fires once after inputs are first set - use for data fetching.</p>
+    <p><strong>ngOnDestroy</strong> fires before component destruction - use for cleanup (unsubscribe, clear timers).</p>
+    <p><strong>ngOnChanges</strong> fires when @Input properties change - log previous and current values.</p>
+</div>
+
+<div class="section">
+    <h2>Task 3: @Input and @Output Communication</h2>
+    <div class="screenshot">
+        <img src="screenshots/ho2_input_output.png" alt="Input Output code">
+        <div class="screenshot-caption">Parent-to-child data flow with @Input, child-to-parent events with @Output</div>
+    </div>
+    <div class="expected">
+        <h4>Expected Outcome</h4>
+        <p>Clicking Enroll on any card logs the course ID to console and shows selected ID below the list. Data flows down via @Input, events bubble up via @Output.</p>
+    </div>
+</div>
+
+        </div>
+        <div class="footer">
+            <p>Digital Nurture 5.0 | .NET Full Stack Engineer Track | Angular Hands-On Exercise</p>
+            <p>For Digital Nurture 5.0 Participants Only</p>
+        </div>
+    </div>
+</body>
+</html>

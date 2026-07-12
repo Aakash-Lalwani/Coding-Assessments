@@ -1,0 +1,40 @@
+<!-- Step 33/34: Custom highlight directive on hover -->
+<!-- Step 37: Configurable highlight color via @Input -->
+<div class="course-card"
+     [ngClass]="cardClasses"
+     [ngStyle]="borderStyle"
+     appHighlight="lightblue"
+     (click)="onCardClick()">
+
+  <!-- Step 20: Display course fields from @Input -->
+  <h3>{{ course.name }}</h3>
+  <p><strong>Code:</strong> {{ course.code }}</p>
+
+  <!-- Step 36: Custom pipe for credit label -->
+  <p><strong>Credits:</strong> {{ course.credits | creditLabel }}</p>
+
+  <!-- Step 27: ngSwitch for grade status badge -->
+  <div [ngSwitch]="course.gradeStatus">
+    <span *ngSwitchCase="'passed'" class="badge-passed">Passed</span>
+    <span *ngSwitchCase="'failed'" class="badge-failed">Failed</span>
+    <span *ngSwitchCase="'pending'" class="badge-pending">Pending</span>
+    <span *ngSwitchDefault class="badge-pending">Unknown</span>
+  </div>
+
+  <!-- Step 31: Show details toggle -->
+  <button class="btn btn-primary" style="margin-top: 8px;" (click)="toggleExpanded(); $event.stopPropagation();">
+    {{ isExpanded ? 'Hide Details' : 'Show Details' }}
+  </button>
+
+  <div *ngIf="isExpanded" style="margin-top: 12px;">
+    <p><strong>Course ID:</strong> {{ course.id }}</p>
+    <p><strong>Status:</strong> {{ course.gradeStatus | uppercase }}</p>
+  </div>
+
+  <!-- Step 21: Enroll button with @Output -->
+  <!-- Step 65: Toggle Enroll/Unenroll based on enrollment state -->
+  <button class="btn btn-primary" style="margin-top: 8px; margin-left: 8px;"
+          (click)="onEnroll($event)">
+    {{ enrollmentService.isEnrolled(course.id) ? 'Unenroll' : 'Enroll' }}
+  </button>
+</div>

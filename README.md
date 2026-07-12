@@ -1,59 +1,38 @@
 # Coding Assessments
 
-This repository contains three React assessment projects submitted by the student.
+This repository is my working folder for coding assignments and hand-ons. I kept the original folder names and file names so it is easy to match each submission with the coursework brief.
 
-## Projects
+## What is inside
 
-- `myfirstreact_source_A1/myfirstreact` — Basic React starter app.
-- `scorecalculatorapp_source_A3/scorecalculatorapp` — Score calculator app with components and styles.
-- `StudentApp_SourceCode_A2/StudentApp` — Multi-page student app with `About`, `Contact`, and `Home` components.
+- Week 1: Java design patterns, DSA, PL/SQL, and React assignments.
+- Week 2: JUnit, Mockito, and Spring REST exercises.
+- Week 3: Logging, Spring Core, JWT auth service, microservices, and Spring Data JPA practice.
 
-## How to run (each project)
+## Folder guide
 
-For each project folder (example: `myfirstreact_source_A1/myfirstreact`):
+### Week 1
 
-1. Open a terminal in the project folder.
-2. Install dependencies:
+- `Design_Patterns_Principles/` - Factory Method and Singleton examples.
+- `DSA/` - search and recursion practice, plus the finance forecaster task.
+- `PL_SQL/` - SQL assignment files.
+- `React_WEEK/` - the React app assignments and their source code.
 
-```bash
-npm install
-```
+### Week 2
 
-3. Start development server:
+- `JUnit_Basic Testing Exercises/` - JUnit exercises and supporting files.
+- `Mockito exercises/` - mocking and verification practice.
+- `Spring_REST_/` - Spring REST assignment files.
+- `Lab3_CSSModules_cohortapp.docx` and `Lab4_Lifecycle_blogapp.docx` - React Hands-on.
 
-```bash
-npm start
-```
+### Week 3
 
-4. Run tests (if present):
+- `jwt-auth-service/` - JWT-based Spring Boot service.
+- `Microservices/` - microservices assignment documents.
+- `SL4J Logging exercises/` - logging practice.
+- `Spring Core_Maven/` - Spring Core and Maven exercises.
+- `Spring-data-jpa-handson/` - JPA and Spring Data practice.
+- `Lab1_JSX_officespacerentalapp.docx` and `Lab2_ES6_cricketapp.docx` - React Hands-on.
 
-```bash
-npm test
-```
+## Quick way to browse
 
-## Git & pushing
-
-This workspace has been prepared for committing. To push to the remote GitHub repository that you provided (`https://github.com/Aakash-Lalwani/Coding-Assessments`), run these commands from the workspace root (`c:\Users\91985\Desktop\Asgns`):
-
-```bash
-# initialize repository (only run once)
-git init
-git checkout -b main
-
-git add .
-git commit -m "chore: add assessment projects"
-
-git remote add origin https://github.com/Aakash-Lalwani/Coding-Assessments.git
-# push to GitHub — you may be prompted for credentials or to authenticate via GitHub CLI
-
-git push -u origin main
-```
-
-If push fails due to authentication, either authenticate with `gh auth login` (GitHub CLI) or create a personal access token and use that when prompted.
-
-## Notes
-
-- Each project is a normal `create-react-app` structure; installing dependencies is required before running.
-- I created a `.gitignore` to avoid committing `node_modules` and build artifacts.
-
-If you want, I can also create separate README files inside each project with more specific instructions, or try pushing now from this machine (you'll need to enter credentials in the terminal).
+Open the week you want, then open the assignment folder inside it. If you are looking for code, start with `src/`. If you are looking for submission notes or screenshots, check the files next to the project folder.

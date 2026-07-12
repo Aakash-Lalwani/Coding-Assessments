@@ -1,0 +1,25 @@
+# Angular Project File Explanations
+
+# 1. angular.json
+# Purpose: Angular CLI workspace configuration file that defines project structure, build, serve, and test configurations.
+
+# 2. tsconfig.json
+# Purpose: Root TypeScript configuration that specifies compiler options, target version (ES2022), and module system.
+
+# 3. tsconfig.app.json
+# Purpose: TypeScript configuration specific to the application, extending the root config with app-specific settings.
+
+# 4. package.json
+# Purpose: Defines project dependencies (Angular, RxJS, NgRx), devDependencies, and npm scripts for building and testing.
+
+# 5. src/main.ts
+# Purpose: Application entry point that bootstraps the root component using Angular's standalone API.
+
+# 6. src/app/app.config.ts
+# Purpose: Standalone Angular configuration file providing router, HTTP client, and NgRx store configuration.
+
+# 7. src/app/app.component.ts
+# Purpose: Root component that serves as the app shell, containing the header and router outlet.
+
+# 8. src/index.html
+# Purpose: Main HTML entry point that loads the Angular application in the browser.

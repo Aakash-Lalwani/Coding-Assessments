@@ -1,0 +1,20 @@
+<h1>Student Profile</h1>
+
+<div class="student-info">
+  <h2>Jane Smith</h2>
+  <p>Email: jane@college.edu</p>
+  <p>GPA: 3.5</p>
+</div>
+
+<h3>Enrolled Courses</h3>
+<div *ngIf="enrolledCourses.length; else noCourses">
+  <div *ngFor="let course of enrolledCourses" class="course-card">
+    <h4>{{ course.name }}</h4>
+    <p><strong>Code:</strong> {{ course.code }}</p>
+    <p><strong>Credits:</strong> {{ course.credits }}</p>
+  </div>
+</div>
+
+<ng-template #noCourses>
+  <p>No enrolled courses yet.</p>
+</ng-template>
