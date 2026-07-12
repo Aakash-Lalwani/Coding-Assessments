@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-On 6: Services & Dependency Injection</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1976d2, #1565c0);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.2em; opacity: 0.9; }
+        .content { padding: 40px; }
+        .section { margin-bottom: 32px; }
+        .section h2 {
+            color: #1976d2;
+            border-bottom: 3px solid #1976d2;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            font-size: 1.5em;
+        }
+        .section h3 {
+            color: #333;
+            margin: 16px 0 8px;
+            font-size: 1.2em;
+        }
+        .topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0;
+        }
+        .topic-tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        .screenshot {
+            margin: 20px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .screenshot img { width: 100%; display: block; }
+        .screenshot-caption {
+            background: #f5f5f5;
+            padding: 10px 16px;
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+        .code-block {
+            background: #263238;
+            color: #aed581;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin: 12px 0;
+        }
+        .file-list {
+            background: #f8f9fa;
+            border-left: 4px solid #1976d2;
+            padding: 16px 20px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .file-list li { margin: 6px 0; color: #444; }
+        .file-list code {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #1976d2;
+            font-family: 'Courier New', monospace;
+        }
+        .expected {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+        }
+        .expected h4 { color: #2e7d32; margin-bottom: 8px; }
+        .level-badge {
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-left: 12px;
+        }
+        .beginner { background: #c8e6c9; color: #2e7d32; }
+        .intermediate { background: #fff9c4; color: #f57f17; }
+        .advanced { background: #ffccbc; color: #bf360c; }
+        .footer {
+            background: #f5f5f5;
+            padding: 20px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 12px;
+            text-align: left;
+        }
+        th { background: #f5f5f5; font-weight: 600; }
+        tr:nth-child(even) { background: #fafafa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hands-On 6: Services & Dependency Injection</h1>
+            <div class="subtitle">Student Course Portal | Angular v20.0</div>
+        </div>
+        <div class="content">
+            
+<div class="section">
+    <h2>Hands-On 6: Services & Dependency Injection <span class="level-badge intermediate">Intermediate</span></h2>
+    <div class="topics">
+        <span class="topic-tag">Injectable</span>
+        <span class="topic-tag">providedIn: 'root'</span>
+        <span class="topic-tag">Singleton</span>
+        <span class="topic-tag">Hierarchical DI</span>
+        <span class="topic-tag">Service-to-Service Injection</span>
+        <span class="topic-tag">Component-Level Provider</span>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Task 1: CourseService (Singleton)</h2>
+    <div class="screenshot">
+        <img src="screenshots/ho6_services.png" alt="Services and DI code">
+        <div class="screenshot-caption">CourseService with providedIn: 'root', injected into multiple components</div>
+    </div>
+    <h3>Service Architecture</h3>
+    <ul>
+        <li><strong>CourseService</strong>: Manages course data with getCourses(), getCourseById(), addCourse()</li>
+        <li><strong>providedIn: 'root'</strong>: Creates a single shared instance across the entire application</li>
+        <li><strong>TypeScript Interface</strong>: Course model ensures compile-time type checking</li>
+    </ul>
+    <p>Multiple components (CourseList, Home, CourseSummaryWidget) inject the same CourseService instance. Adding a course in one component updates the count in all others - confirming singleton behavior.</p>
+</div>
+
+<div class="section">
+    <h2>Task 2: EnrollmentService & Hierarchical DI</h2>
+    <div class="screenshot">
+        <img src="screenshots/ho6_scoped.png" alt="Component-level provider code">
+        <div class="screenshot-caption">Component-level provider creating separate service instance per component</div>
+    </div>
+    <h3>Key Patterns</h3>
+    <ul>
+        <li><strong>Service-to-Service injection</strong>: EnrollmentService injects CourseService to resolve course IDs</li>
+        <li><strong>Component-level providers</strong>: providers: [NotificationService] creates separate instance scoped to that component</li>
+        <li><strong>Hierarchical DI</strong>: Angular searches injectors up the tree - Component &rarr; Parent &rarr; Module &rarr; Root</li>
+    </ul>
+    <div class="expected">
+        <h4>Expected Outcome</h4>
+        <p>Enroll button toggles to Unenroll after clicking. Enrolled courses appear in profile page. Course count in summary widget matches the service data. Component-level provider creates isolated NotificationService instance.</p>
+    </div>
+</div>
+
+        </div>
+        <div class="footer">
+            <p>Digital Nurture 5.0 | .NET Full Stack Engineer Track | Angular Hands-On Exercise</p>
+            <p>For Digital Nurture 5.0 Participants Only</p>
+        </div>
+    </div>
+</body>
+</html>

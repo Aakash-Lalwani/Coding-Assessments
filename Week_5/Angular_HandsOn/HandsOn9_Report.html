@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-On 9: NgRx State Management</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1976d2, #1565c0);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.2em; opacity: 0.9; }
+        .content { padding: 40px; }
+        .section { margin-bottom: 32px; }
+        .section h2 {
+            color: #1976d2;
+            border-bottom: 3px solid #1976d2;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            font-size: 1.5em;
+        }
+        .section h3 {
+            color: #333;
+            margin: 16px 0 8px;
+            font-size: 1.2em;
+        }
+        .topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0;
+        }
+        .topic-tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        .screenshot {
+            margin: 20px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .screenshot img { width: 100%; display: block; }
+        .screenshot-caption {
+            background: #f5f5f5;
+            padding: 10px 16px;
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+        .code-block {
+            background: #263238;
+            color: #aed581;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin: 12px 0;
+        }
+        .file-list {
+            background: #f8f9fa;
+            border-left: 4px solid #1976d2;
+            padding: 16px 20px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .file-list li { margin: 6px 0; color: #444; }
+        .file-list code {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #1976d2;
+            font-family: 'Courier New', monospace;
+        }
+        .expected {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+        }
+        .expected h4 { color: #2e7d32; margin-bottom: 8px; }
+        .level-badge {
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-left: 12px;
+        }
+        .beginner { background: #c8e6c9; color: #2e7d32; }
+        .intermediate { background: #fff9c4; color: #f57f17; }
+        .advanced { background: #ffccbc; color: #bf360c; }
+        .footer {
+            background: #f5f5f5;
+            padding: 20px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 12px;
+            text-align: left;
+        }
+        th { background: #f5f5f5; font-weight: 600; }
+        tr:nth-child(even) { background: #fafafa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hands-On 9: NgRx State Management</h1>
+            <div class="subtitle">Student Course Portal | Angular v20.0</div>
+        </div>
+        <div class="content">
+            
+<div class="section">
+    <h2>Hands-On 9: NgRx State Management <span class="level-badge advanced">Advanced</span></h2>
+    <div class="topics">
+        <span class="topic-tag">Store</span>
+        <span class="topic-tag">Actions</span>
+        <span class="topic-tag">Reducers</span>
+        <span class="topic-tag">Selectors</span>
+        <span class="topic-tag">Effects</span>
+        <span class="topic-tag">Memoization</span>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Task 1: Store Setup with Actions, Reducer & Selectors</h2>
+    <div class="screenshot">
+        <img src="screenshots/ho9_ngrx_store.png" alt="NgRx Store code">
+        <div class="screenshot-caption">Actions, pure reducer with createReducer/on, and memoized selectors</div>
+    </div>
+    <h3>Redux Pattern in NgRx</h3>
+    <table>
+        <tr><th>Concept</th><th>Purpose</th><th>File</th></tr>
+        <tr><td>Actions</td><td>Describe events that change state</td><td>course.actions.ts</td></tr>
+        <tr><td>Reducers</td><td>Pure functions: (state, action) &rarr; newState</td><td>course.reducer.ts</td></tr>
+        <tr><td>Selectors</td><td>Memoized queries into the store</td><td>course.selectors.ts</td></tr>
+        <tr><td>Effects</td><td>Handle side effects (HTTP calls)</td><td>course.effects.ts</td></tr>
+    </table>
+    <p><strong>Action Convention</strong>: '[Feature] Description' - makes DevTools filterable by '[Course]' prefix.</p>
+    <p><strong>Selector Memoization</strong>: Selectors only recompute when their inputs change - NgRx's key performance optimization.</p>
+</div>
+
+<div class="section">
+    <h2>Task 2: Effects & Enrollment State</h2>
+    <div class="screenshot">
+        <img src="screenshots/ho9_effects.png" alt="NgRx Effects code">
+        <div class="screenshot-caption">CourseEffects with switchMap for HTTP, cross-slice enrollment selectors</div>
+    </div>
+    <h3>Effects Flow</h3>
+    <ol>
+        <li>Component dispatches <code>loadCourses()</code></li>
+        <li>Effect listens via <code>ofType(loadCourses)</code></li>
+        <li>Effect calls <code>courseService.getCourses()</code> via switchMap</li>
+        <li>On success: dispatches <code>loadCoursesSuccess({ courses })</code></li>
+        <li>On error: dispatches <code>loadCoursesFailure({ error })</code></li>
+        <li>Reducer updates state based on action type</li>
+        <li>Selector emits new value, component re-renders via async pipe</li>
+    </ol>
+    <h3>Cross-Slice Selectors</h3>
+    <p><code>selectEnrolledCourses</code> combines course state + enrollment state to derive full Course objects for enrolled IDs without duplicating state.</p>
+    <div class="expected">
+        <h4>Expected Outcome</h4>
+        <p>Redux DevTools shows the complete action &rarr; effect &rarr; success flow. Enrollment state updates correctly. The async pipe renders enrolled/unenrolled state per card. State tree shows courses, loading, and error properties.</p>
+    </div>
+</div>
+
+        </div>
+        <div class="footer">
+            <p>Digital Nurture 5.0 | .NET Full Stack Engineer Track | Angular Hands-On Exercise</p>
+            <p>For Digital Nurture 5.0 Participants Only</p>
+        </div>
+    </div>
+</body>
+</html>

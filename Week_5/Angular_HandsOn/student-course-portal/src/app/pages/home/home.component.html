@@ -1,0 +1,43 @@
+<!-- Hands-On 1, Task 2, Step 8: Welcome heading and description -->
+<!-- Step 11: String interpolation -->
+<h1>{{ portalName }}</h1>
+<p>Welcome to the Student Course Portal. Browse courses, enroll, and track your academic progress.</p>
+
+<!-- Hands-On 6: Stats row -->
+<div class="stats-row">
+  <div class="stat-item">
+    <div class="stat-value">{{ coursesCount }}</div>
+    <div class="stat-label">Courses Available</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">{{ enrolledCount }}</div>
+    <div class="stat-label">Enrolled</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">{{ gpa }}</div>
+    <div class="stat-label">GPA</div>
+  </div>
+</div>
+
+<!-- Step 12: Property binding - button disabled state -->
+<!-- Step 13: Event binding - click handler -->
+<button class="btn btn-primary" [disabled]="!isPortalActive" (click)="onEnrollClick()">
+  Enroll Now
+</button>
+
+<!-- Step 13: Message display -->
+<p *ngIf="message">{{ message }}</p>
+
+<!-- Step 14: Two-way binding with ngModel -->
+<!--
+  Difference between [property] and [(ngModel)]:
+  [property] is ONE-WAY binding: component -> DOM only. Changes in the component update the view.
+  [(ngModel)] is TWO-WAY binding: DOM <-> component. Changes in the input update the component,
+  and changes in the component update the input. [(ngModel)] is shorthand for:
+  [ngModel]="property" (ngModelChange)="property=$event"
+-->
+<div class="form-group">
+  <label for="search">Search Courses:</label>
+  <input id="search" type="text" [(ngModel)]="searchTerm" placeholder="Type to search...">
+  <p *ngIf="searchTerm">Searching for: {{ searchTerm }}</p>
+</div>

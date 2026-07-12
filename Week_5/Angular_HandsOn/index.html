@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Hands-On: Complete Exercise Index</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1976d2, #1565c0);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.2em; opacity: 0.9; }
+        .content { padding: 40px; }
+        .section { margin-bottom: 32px; }
+        .section h2 {
+            color: #1976d2;
+            border-bottom: 3px solid #1976d2;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            font-size: 1.5em;
+        }
+        .section h3 {
+            color: #333;
+            margin: 16px 0 8px;
+            font-size: 1.2em;
+        }
+        .topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0;
+        }
+        .topic-tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        .screenshot {
+            margin: 20px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .screenshot img { width: 100%; display: block; }
+        .screenshot-caption {
+            background: #f5f5f5;
+            padding: 10px 16px;
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+        .code-block {
+            background: #263238;
+            color: #aed581;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin: 12px 0;
+        }
+        .file-list {
+            background: #f8f9fa;
+            border-left: 4px solid #1976d2;
+            padding: 16px 20px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .file-list li { margin: 6px 0; color: #444; }
+        .file-list code {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #1976d2;
+            font-family: 'Courier New', monospace;
+        }
+        .expected {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+        }
+        .expected h4 { color: #2e7d32; margin-bottom: 8px; }
+        .level-badge {
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-left: 12px;
+        }
+        .beginner { background: #c8e6c9; color: #2e7d32; }
+        .intermediate { background: #fff9c4; color: #f57f17; }
+        .advanced { background: #ffccbc; color: #bf360c; }
+        .footer {
+            background: #f5f5f5;
+            padding: 20px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 12px;
+            text-align: left;
+        }
+        th { background: #f5f5f5; font-weight: 600; }
+        tr:nth-child(even) { background: #fafafa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Angular Hands-On: Complete Exercise Index</h1>
+            <div class="subtitle">Student Course Portal | Angular v20.0</div>
+        </div>
+        <div class="content">
+            
+<div class="section">
+    <h2>Student Course Portal - Angular v20 Hands-On Exercises</h2>
+    <p style="font-size: 1.1em; color: #555; margin: 16px 0;">
+        This directory contains all 10 hands-on exercises for the Digital Nurture 5.0 Angular (v20.0) 
+        Deep Skilling Program. Each exercise builds incrementally on the same Student Course Portal project.
+    </p>
+    <div class="screenshot">
+        <img src="screenshots/project_structure.png" alt="Project file structure">
+        <div class="screenshot-caption">Complete project file structure for all 10 hands-on exercises</div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Exercise Index</h2>
+    <table>
+        <tr><th>#</th><th>Topic</th><th>Level</th><th>Key Concepts</th><th>Report</th></tr>
+        <tr>
+            <td>1</td><td>Environment Setup & First Component</td><td><span class="level-badge beginner">Beginner</span></td>
+            <td>CLI, Project Structure, Components</td>
+            <td><a href="HandsOn1_Report.html">View Report</a></td>
+        </tr>
+        <tr>
+            <td>2</td><td>Data Binding, Lifecycle & Communication</td><td><span class="level-badge beginner">Beginner</span></td>
+            <td>4 Bindings, ngOnInit/ngOnDestroy, @Input/@Output</td>
+            <td><a href="HandsOn2_Report.html">View Report</a></td>
+        </tr>
+        <tr>
+            <td>3</td><td>Directives & Pipes</td><td><span class="level-badge beginner">Beginner</span></td>
+            <td>ngIf/ngFor/ngSwitch, ngClass/ngStyle, Custom</td>
+            <td><a href="HandsOn3_Report.html">View Report</a></td>
+        </tr>
+        <tr>
+            <td>4</td><td>Template-Driven Forms & Validation</td><td><span class="level-badge intermediate">Intermediate</span></td>
+            <td>ngForm, ngModel, Built-in Validators</td>
+            <td><a href="HandsOn4_Report.html">View Report</a></td>
+        </tr>
+        <tr>
+            <td>5</td><td>Reactive Forms</td><td><span class="level-badge intermediate">Intermediate</span></td>
+            <td>FormBuilder, FormArray, Custom Validators</td>
+            <td><a href="HandsOn5_Report.html">View Report</a></td>
+        </tr>
+        <tr>
+            <td>6</td><td>Services & Dependency Injection</td><td><span class="level-badge intermediate">Intermediate</span></td>
+            <td>Injectable, Singleton, Hierarchical DI</td>
+            <td><a href="HandsOn6_Report.html">View Report</a></td>
+        </tr>
+        <tr>
+            <td>7</td><td>Angular Routing</td><td><span class="level-badge intermediate">Intermediate</span></td>
+            <td>Routes, Guards, Lazy Loading</td>
+            <td><a href="HandsOn7_Report.html">View Report</a></td>
+        </tr>
+        <tr>
+            <td>8</td><td>HTTP Client & Interceptors</td><td><span class="level-badge advanced">Advanced</span></td>
+            <td>HttpClient, RxJS, Interceptors</td>
+            <td><a href="HandsOn8_Report.html">View Report</a></td>
+        </tr>
+        <tr>
+            <td>9</td><td>NgRx State Management</td><td><span class="level-badge advanced">Advanced</span></td>
+            <td>Store, Actions, Reducers, Effects</td>
+            <td><a href="HandsOn9_Report.html">View Report</a></td>
+        </tr>
+        <tr>
+            <td>10</td><td>Unit Testing</td><td><span class="level-badge advanced">Advanced</span></td>
+            <td>Jasmine, TestBed, HttpTesting, MockStore</td>
+            <td><a href="HandsOn10_Report.html">View Report</a></td>
+        </tr>
+    </table>
+</div>
+
+<div class="section">
+    <h2>Quick Start</h2>
+    <div class="code-block">
+cd student-course-portal<br>
+npm install<br>
+ng serve          # Start dev server at http://localhost:4200<br>
+json-server --watch db.json --port 3000  # Start mock API<br>
+ng test           # Run unit tests<br>
+ng test --code-coverage  # Generate coverage report
+    </div>
+</div>
+
+<div class="section">
+    <h2>Project Statistics</h2>
+    <table>
+        <tr><th>Metric</th><th>Count</th></tr>
+        <tr><td>Total Components</td><td>10+ (Header, Home, CourseList, CourseDetail, CourseCard, etc.)</td></tr>
+        <tr><td>Services</td><td>5 (Course, Enrollment, Auth, Loading, Notification)</td></tr>
+        <tr><td>Guards</td><td>2 (AuthGuard, UnsavedChangesGuard)</td></tr>
+        <tr><td>Interceptors</td><td>3 (Auth, ErrorHandler, Loading)</td></tr>
+        <tr><td>Store Slices</td><td>2 (Course, Enrollment)</td></tr>
+        <tr><td>Custom Pipes</td><td>1 (CreditLabelPipe)</td></tr>
+        <tr><td>Custom Directives</td><td>1 (HighlightDirective)</td></tr>
+        <tr><td>Unit Tests</td><td>10+ test cases across 3 spec files</td></tr>
+        <tr><td>Hands-On Exercises</td><td>10 (all completed)</td></tr>
+    </table>
+</div>
+
+<div class="section">
+    <h2>Submission Contents</h2>
+    <div class="file-list">
+        <ul>
+            <li><code>student-course-portal/</code> - Complete Angular project source code</li>
+            <li><code>screenshots/</code> - 20+ code screenshot images as proof of work</li>
+            <li><code>HandsOn1_Report.html</code> through <code>HandsOn10_Report.html</code> - Individual exercise reports</li>
+            <li><code>index.html</code> - This master index page</li>
+        </ul>
+    </div>
+</div>
+
+        </div>
+        <div class="footer">
+            <p>Digital Nurture 5.0 | .NET Full Stack Engineer Track | Angular Hands-On Exercise</p>
+            <p>For Digital Nurture 5.0 Participants Only</p>
+        </div>
+    </div>
+</body>
+</html>

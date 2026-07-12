@@ -1,0 +1,30 @@
+<h2>Available Courses</h2>
+
+<!-- Step 25: ngIf loading state -->
+<div *ngIf="isLoading || (loading$ | async)" class="loading-spinner">
+  Loading courses...
+</div>
+
+<!-- Step 28: ngIf else for empty courses -->
+<ng-template #noCourses>
+  <p>No courses available.</p>
+</ng-template>
+
+<!-- Step 26: ngFor with trackBy for performance -->
+<!-- Step 22: Render course cards with @Input and @Output -->
+<div *ngIf="!isLoading && !(loading$ | async) && (courses$ | async)?.length; else noCourses">
+  <app-course-card
+    *ngFor="let course of courses$ | async; let i = index; trackBy: trackByCourseId"
+    [course]="course"
+    (enrollRequested)="onEnroll($event)"
+    (cardClicked)="onCardClick($event)">
+  </app-course-card>
+</div>
+
+<!-- Error display -->
+<div *ngIf="error$ | async as error" style="color: red; padding: 16px;">
+  Error: {{ error }}
+</div>
+
+<!-- Step 23: Display selected course ID -->
+<p *ngIf="selectedCourseId">Selected course ID: {{ selectedCourseId }}</p>
