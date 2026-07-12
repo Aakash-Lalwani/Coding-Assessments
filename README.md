@@ -1,38 +1,37 @@
 # Coding Assessments
 
-This repository is my working folder for coding assignments and hand-ons. I kept the original folder names and file names so it is easy to match each submission with the coursework brief.
+This repository contains my completed coding assessments, hands-on exercises, and practice assignments as part of the Java Full Stack Engineering training program.
 
-## What is inside
+The work has been organized week-wise to maintain a clear structure and to make evaluation easier. Each folder contains the source code, project files, and supporting documents related to the assignments completed during that particular week.
 
-- Week 1: Java design patterns, DSA, PL/SQL, and React assignments.
-- Week 2: JUnit, Mockito, and Spring REST exercises.
-- Week 3: Logging, Spring Core, JWT auth service, microservices, and Spring Data JPA practice.
+## Repository Structure
 
-## Folder guide
+### Week_1
+Contains assignments and exercises related to:
+- Programming fundamentals
+- Data Structures and Algorithms
+- Design Patterns
+- SQL
+- Introduction to React
 
-### Week 1
+### Week_2
+Contains practical implementations and exercises covering:
+- Unit Testing using JUnit
+- Mocking using Mockito
+- Spring REST APIs
+- Frontend development tasks
 
-- `Design_Patterns_Principles/` - Factory Method and Singleton examples.
-- `DSA/` - search and recursion practice, plus the finance forecaster task.
-- `PL_SQL/` - SQL assignment files.
-- `React_WEEK/` - the React app assignments and their source code.
+### Week_3
+Includes assignments based on:
+- Spring Core
+- Spring Data JPA
+- Logging Frameworks
+- JWT Authentication
+- Microservices concepts
 
-### Week 2
+### Week_4
+Contains weekly assessments and hands-on practice exercises completed during the training.
 
-- `JUnit_Basic Testing Exercises/` - JUnit exercises and supporting files.
-- `Mockito exercises/` - mocking and verification practice.
-- `Spring_REST_/` - Spring REST assignment files.
-- `Lab3_CSSModules_cohortapp.docx` and `Lab4_Lifecycle_blogapp.docx` - React Hands-on.
+### Week_5
+Contains the final set of assignments and practical implementations for the program.
 
-### Week 3
-
-- `jwt-auth-service/` - JWT-based Spring Boot service.
-- `Microservices/` - microservices assignment documents.
-- `SL4J Logging exercises/` - logging practice.
-- `Spring Core_Maven/` - Spring Core and Maven exercises.
-- `Spring-data-jpa-handson/` - JPA and Spring Data practice.
-- `Lab1_JSX_officespacerentalapp.docx` and `Lab2_ES6_cricketapp.docx` - React Hands-on.
-
-## Quick way to browse
-
-Open the week you want, then open the assignment folder inside it. If you are looking for code, start with `src/`. If you are looking for submission notes or screenshots, check the files next to the project folder.
