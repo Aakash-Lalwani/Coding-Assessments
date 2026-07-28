@@ -8,30 +8,35 @@ The work has been organized week-wise to maintain a clear structure and to make 
 
 ### Week_1
 Contains assignments and exercises related to:
-- Programming fundamentals
-- Data Structures and Algorithms
-- Design Patterns
-- SQL
-- Introduction to React
+- Data Structures and Algorithms (recursion, searching and sorting)
+- Design Patterns (Singleton, Factory Method)
+- PL/SQL
+- Introduction to React (first app, student app, score calculator app)
 
 ### Week_2
 Contains practical implementations and exercises covering:
-- Unit Testing using JUnit
-- Mocking using Mockito
+- Unit Testing using JUnit (Arrange-Act-Assert, Assertions)
+- Mocking using Mockito (Stubbing, Verifying Interactions)
 - Spring REST APIs
-- Frontend development tasks
 
 ### Week_3
 Includes assignments based on:
-- Spring Core
-- Spring Data JPA
-- Logging Frameworks
-- JWT Authentication
-- Microservices concepts
+- Spring Core and Maven project setup
+- Dependency Injection
+- SLF4J Logging
+- Microservices design (Account and Loan microservices)
 
 ### Week_4
-Contains weekly assessments and hands-on practice exercises completed during the training.
+Contains React hands-on exercises, including a blog app, cohort tracker, cricket app, and office space rental app, each with its own working output.
 
 ### Week_5
-Contains the final set of assignments and practical implementations for the program.
+Contains Git hands-on exercises and Spring Data JPA practice, including a comparison of JPA, Hibernate, and Spring Data JPA.
 
+### Week_6
+Contains further React hands-on exercises (event handling, ticket booking app, blogger app) along with a JWT Authentication Service built using Spring Boot and Spring Security.
+
+### Week_7
+Contains Angular hands-on exercises building up a Student Course Portal, covering components, routing, forms, guards, interceptors, and NgRx, along with reports and screenshots for each hands-on.
+
+## Tech Stack
+Java, Spring Boot, Spring Security, Spring Data JPA, JUnit, Mockito, PL/SQL, React, Angular, Maven, Git
