@@ -1,8 +1,6 @@
 # Coding Assessments
 
-This repository contains my completed coding assessments, hands-on exercises, and practice assignments as part of the Java Full Stack Engineering training program.
-
-The work has been organized week-wise to maintain a clear structure and to make evaluation easier. Each folder contains the source code, project files, and supporting documents related to the assignments completed during that particular week.
+This repository contains my completed coding assessments, hands-on exercises, and practice assignments.
 
 ## Repository Structure
 
